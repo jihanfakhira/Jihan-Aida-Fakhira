@@ -1,0 +1,857 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Jihan Aida Fakhira — Personal Editorial Dossier &amp; Portfolio</title>
+<!-- BEGIN: Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&amp;family=Caveat:wght@400;600;700&amp;family=Pinyon+Script&amp;family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+<!-- END: Google Fonts -->
+<!-- BEGIN: Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'cream-desk': '#EFECE1',
+            'folder-pink': '#E6A6B8',
+            'folder-pink-dark': '#CE8B9D',
+            'paper-form': '#F8F6F0',
+            'paper-blue': '#C7D9EE',
+            'paper-sage': '#9BA892',
+            'paper-burgundy': '#9E4763',
+            'ink-navy': '#1B2A4A',
+            'stamp-blue': '#1D4ED8',
+            'stamp-red': '#B91C1C',
+            'charcoal': '#1F1E1C',
+            'pencil': '#4B4944',
+            'parchment-border': '#D8D2C3'
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            script: ['"Alex Brush"', '"Pinyon Script"', 'cursive'],
+            pinyon: ['"Pinyon Script"', 'cursive'],
+            hand: ['"Caveat"', 'cursive'],
+            mono: ['"Space Mono"', 'monospace'],
+          },
+          boxShadow: {
+            'tactile': '0 20px 40px -15px rgba(50, 40, 30, 0.18), 0 3px 8px -2px rgba(50, 40, 30, 0.08)',
+            'paper': '0 12px 28px -8px rgba(60, 50, 40, 0.15), 0 2px 6px rgba(0, 0, 0, 0.04)',
+            'folder': '0 24px 50px -12px rgba(45, 30, 35, 0.22)',
+            'polaroid': '0 16px 32px -6px rgba(20, 20, 20, 0.25), 0 4px 8px -2px rgba(0,0,0,0.12)',
+            'metal': 'inset 0 1px 2px rgba(255,255,255,0.8), 0 6px 12px rgba(0,0,0,0.2)'
+          }
+        }
+      }
+    }
+  </script>
+<!-- END: Tailwind CDN -->
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="scrapbook-textures">
+    /* Subtle desk paper background pattern */
+    body {
+      background-color: #EFECE1;
+      background-image: 
+        radial-gradient(rgba(180, 170, 150, 0.25) 1px, transparent 1px),
+        radial-gradient(rgba(140, 130, 110, 0.15) 1px, transparent 1px);
+      background-size: 24px 24px, 48px 48px;
+      background-position: 0 0, 12px 12px;
+      color: #2D2A26;
+    }
+
+    /* Manila Folder die-cut tab shape */
+    .folder-tab {
+      clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+    }
+
+    /* Binder punch holes */
+    .binder-hole {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #EFECE1;
+      box-shadow: inset 1px 2px 4px rgba(40, 30, 20, 0.35), 0 1px 0 rgba(255,255,255,0.7);
+    }
+
+    /* Paperclip representation */
+    .silver-paperclip {
+      position: absolute;
+      width: 16px;
+      height: 48px;
+      border: 3px solid #C0C0C4;
+      border-radius: 12px;
+      box-shadow: 2px 3px 5px rgba(0,0,0,0.22), inset 1px 1px 2px rgba(255,255,255,0.8);
+      z-index: 40;
+    }
+    .silver-paperclip::after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 1px;
+      width: 8px;
+      height: 30px;
+      border: 2px solid #A8A8AC;
+      border-radius: 8px;
+    }
+
+    /* 3D Chrome Star Sticker */
+    .chrome-star {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #FFFFFF 0%, #D4D4D8 40%, #71717A 80%, #E4E4E7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.28));
+      transform-origin: center;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .chrome-star:hover {
+      transform: scale(1.25) rotate(15deg);
+    }
+
+    /* Stamp aesthetic */
+    .rubber-stamp {
+      border: 2.5px dashed #1D4ED8;
+      color: #1D4ED8;
+      text-transform: uppercase;
+      font-family: 'Space Mono', monospace;
+      mix-blend-mode: multiply;
+      opacity: 0.88;
+      letter-spacing: 0.12em;
+    }
+
+    /* Silver Tray Vintage Frame */
+    .silver-tray {
+      background: linear-gradient(145deg, #F3F3F5, #D2D2D7, #A3A3AC, #EAEAEF);
+      border: 4px solid #B8B8C2;
+      box-shadow: 0 14px 28px rgba(0,0,0,0.2), inset 0 2px 4px rgba(255,255,255,0.9), inset 0 -2px 4px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .silver-tray::before {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border: 1px dashed rgba(255,255,255,0.6);
+      pointer-events: none;
+    }
+
+    /* Washi Tape Strip */
+    .washi-tape {
+      background: rgba(243, 235, 215, 0.7);
+      border-left: 2px dashed rgba(180, 160, 140, 0.5);
+      border-right: 2px dashed rgba(180, 160, 140, 0.5);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      backdrop-filter: blur(1px);
+    }
+  </style>
+<style data-purpose="interactive-animations">
+    /* Subtle tactile lift on interactive items */
+    .tactile-lift {
+      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+    }
+    .tactile-lift:hover {
+      transform: translateY(-7px) scale(1.015);
+      box-shadow: 0 26px 45px -10px rgba(45, 30, 25, 0.22);
+    }
+
+    /* Notebook lined paper effect */
+    .ruled-lines {
+      background-image: repeating-linear-gradient(transparent, transparent 27px, #E5DFC8 28px);
+      line-height: 28px;
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="antialiased min-h-screen text-[#2A2723] selection:bg-[#E6A6B8] selection:text-[#1B2A4A] overflow-x-hidden">
+<!-- BEGIN: Sticky Navigation -->
+<header class="sticky top-0 z-50 backdrop-blur-md bg-[#EFECE1]/85 border-b border-[#D8D2C3]/60 transition-all duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Nav Left -->
+<nav class="hidden md:flex items-center space-x-7 text-[12px] font-bold tracking-[0.2em] uppercase font-mono text-[#544E45]">
+<a class="hover:text-black transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#1D4ED8] hover:after:w-full after:transition-all" href="#home">HOME</a>
+<a class="hover:text-black transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#1D4ED8] hover:after:w-full after:transition-all" href="#about">ABOUT</a>
+<a class="hover:text-black transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#1D4ED8] hover:after:w-full after:transition-all" href="#work">SELECTED WORK</a>
+</nav>
+<!-- Center Ornate Signature -->
+<div class="text-center">
+<a class="inline-block group" href="#home">
+<span class="font-script text-3xl sm:text-4xl md:text-5xl text-[#1E1C19] group-hover:text-[#1D4ED8] transition-colors leading-none tracking-normal">
+            Jihan Aida Fakhira
+          </span>
+</a>
+</div>
+<!-- Nav Right -->
+<nav class="flex items-center space-x-6 text-[12px] font-bold tracking-[0.2em] uppercase font-mono text-[#544E45]">
+<a class="hidden sm:inline-block hover:text-black transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#1D4ED8] hover:after:w-full after:transition-all" href="#skills">SKILLS &amp; ORG</a>
+<a class="px-4 py-2 rounded-full border border-[#2D2A26] bg-[#FAF8F5] hover:bg-[#1D4ED8] hover:border-[#1D4ED8] hover:text-white transition-all shadow-sm" href="#contact">
+          CONTACT
+        </a>
+</nav>
+</div>
+</header>
+<!-- END: Sticky Navigation -->
+<!-- BEGIN: Main Container -->
+<main class="relative z-10">
+<!-- BEGIN: Hero Section -->
+<section class="relative pt-8 pb-20 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden" id="home">
+<!-- Scattered Silver Star Stickers -->
+<div class="absolute left-6 top-14 text-3xl chrome-star select-none">✦</div>
+<div class="absolute left-16 top-32 text-xl chrome-star select-none">✧</div>
+<div class="absolute right-12 top-20 text-4xl chrome-star select-none">✦</div>
+<div class="absolute right-28 top-36 text-2xl chrome-star select-none">✧</div>
+<!-- Desk Manila Folder Outer Shell -->
+<div class="relative mx-auto max-w-5xl bg-[#E6A6B8] rounded-2xl shadow-folder p-4 sm:p-8 md:p-12 border-2 border-[#D996A8] transition-transform duration-300">
+<!-- Folder die-cut tab (top left) -->
+<div class="absolute -top-7 left-8 bg-[#E6A6B8] border-t-2 border-l-2 border-r-2 border-[#D996A8] px-8 py-1.5 rounded-t-xl folder-tab shadow-sm hidden sm:block">
+<span class="font-mono text-xs uppercase tracking-widest text-[#5E2B3A] font-bold">DOSSIER // 2026-N01</span>
+</div>
+<!-- Folder Spine crease subtle shadow -->
+<div class="absolute top-0 bottom-0 left-1/2 w-16 -translate-x-1/2 bg-gradient-to-r from-transparent via-black/[0.04] to-transparent pointer-events-none"></div>
+<!-- Main Scrapbook Workspace Inside Folder -->
+<div class="relative min-h-[580px] md:min-h-[640px] flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12">
+<!-- LEFT CLUSTER: Framed Photo & Silver Tray Charm -->
+<div class="relative w-full lg:w-5/12 flex flex-col items-center justify-center pt-4">
+<!-- Underneath Peeking Blue Note Paper -->
+<div class="absolute -rotate-12 -left-3 top-8 w-44 h-60 bg-[#D4E4F5] rounded shadow-md border border-[#BACEE2] p-3 hidden sm:block">
+<span class="font-script text-2xl text-[#2B4B6F]">Creative spirit</span>
+<p class="font-hand text-xs text-[#3D5570] mt-1 leading-snug">S1 Teknik Informatika @ IT-PLN. Memadukan teknologi &amp; seni visual sejak 2024.</p>
+</div>
+<!-- Main Color Photo Frame -->
+<div class="relative z-20 bg-white p-3 md:p-4 rounded-sm shadow-tactile border border-neutral-200 -rotate-3 hover:rotate-0 transition-transform duration-300 tactile-lift w-64 sm:w-72 md:w-80">
+<div class="overflow-hidden bg-[#242124] aspect-[4/5] relative group">
+<img alt="Potret Jihan Aida Fakhira" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter contrast-[1.05]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLZIKn2XjeoErVOf54nJAQkISMH7aYZ6EMCMWu0YrhSRvMuvLMznWjHSci2UxThfoJ640i1KCl9SWw6vfQCdaVrXZwI79nH7fL09EBemsbZRiEasSNNHCifb91gZCZV-kV59u7aQS0FS5--SAfkbLj_HtLvqvVQwIDrOlSqVtdZehSTvrOftuVpv0wUBIbVi9mKTaukiFwNmItam28oaopnVLKRKREQ1JUtXQELPX9esChSnV8zuWt">
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<div class="absolute bottom-2 left-2 right-2 text-white font-mono text-[10px] tracking-wider uppercase opacity-90">
+                  PORTRAIT // CILEGON, INDONESIA
+                </div>
+</div>
+<div class="mt-3 flex items-center justify-between text-neutral-500">
+<span class="font-mono text-[11px] tracking-widest uppercase">JIHAN A. FAKHIRA</span>
+<span class="font-hand text-lg text-neutral-700">archive '26</span>
+</div>
+</div>
+<!-- Overlapping Ornate Vintage Silver Tray Charm -->
+<div class="absolute -bottom-6 -left-2 sm:-left-6 z-30 silver-tray rounded-xl p-3 w-48 sm:w-52 transform -rotate-6 hover:rotate-0 transition-transform shadow-tactile">
+<div class="text-center border border-white/60 py-2 px-1 rounded bg-[#E4E4E8]/60 backdrop-blur-xs">
+<div class="text-[10px] uppercase font-mono tracking-widest text-[#3B3A40] font-bold">OSIS KESENIAN</div>
+<div class="font-script text-2xl text-[#26242B] leading-none mt-1">Art &amp; Leadership</div>
+<div class="text-[9px] font-mono text-[#525059] mt-0.5">PERIODE 2024 — 2025</div>
+</div>
+</div>
+<!-- Daisy Enamel Pin / Flower Charm sticker -->
+<div class="absolute -top-3 -right-2 z-30 w-10 h-10 rounded-full bg-[#FAF5EB] shadow-md border border-[#E2D8C3] flex items-center justify-center transform rotate-12">
+<span class="text-xl">🌸</span>
+</div>
+</div>
+<!-- CENTER / RIGHT CLUSTER: Punched Binder Form & Polaroid Paperclipped -->
+<div class="relative w-full lg:w-7/12 flex flex-col items-center">
+<!-- Metallic Paperclip on top-right Polaroid -->
+<div class="silver-paperclip -top-4 right-10 md:right-16 z-40"></div>
+<!-- B&W Polaroid Floating Top Right -->
+<div class="absolute -top-10 -right-2 sm:-right-4 z-30 bg-white p-3 pt-3 pb-5 shadow-polaroid rotate-6 hover:rotate-2 transition-transform duration-300 w-44 sm:w-52 tactile-lift">
+<div class="w-full aspect-square bg-[#1B1B1B] overflow-hidden">
+<img alt="Polaroid Editorial Jihan Aida" class="w-full h-full object-cover filter grayscale contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAapyWyxiOegEHPKHP06Q__bhE9GdYjzUrAZ5d84LZj_zTpIAzGXvR6Ip4WPnKdh2P5xx34t4IYUpicCiBSoOZwkzzKFiMiDf_WRUXztMIfKJ8jv7EozLCgvPYMzVBl-r0hmq4XvNUNw55GiqJQxFnMMi_KmbI67px318vWRpC_JXFvSAiZv7DpJefKhjuje0LX8X7jEq0FkLAHYo4-U9YfO6d2UyzPOhWJn3k5oJb0krPGsxTj__se">
+</div>
+<p class="font-hand text-center text-neutral-800 text-lg mt-2 leading-none">always dreaming ✦</p>
+</div>
+<!-- Loose Leaf Punched Binder Dossier Card -->
+<div class="relative z-20 w-full bg-[#FBF9F4] rounded-sm shadow-paper border border-[#E3DEC3] p-5 sm:p-8 pt-8 -rotate-1 hover:rotate-0 transition-transform duration-300">
+<!-- 3 Punched Binder Holes on Left Margin -->
+<div class="absolute left-2.5 top-8 flex flex-col space-y-24">
+<div class="binder-hole"></div>
+<div class="binder-hole"></div>
+<div class="binder-hole"></div>
+</div>
+<!-- Content Offset from margin -->
+<div class="pl-6 sm:pl-8">
+<!-- Dossier Header -->
+<div class="border-b-2 border-[#1E1C19] pb-3 mb-4">
+<p class="font-mono text-[10px] sm:text-[11px] tracking-[0.25em] text-[#6E685E] uppercase font-bold">
+                    OFFICIAL DOSSIER RECORD // INFORMATICS &amp; ARTS
+                  </p>
+<h1 class="font-mono text-xl sm:text-2xl font-bold tracking-tight text-[#1C1A17] uppercase mt-0.5">
+                    WELCOME TO THE WORLD OF
+                  </h1>
+</div>
+<!-- Structured Dossier Fields -->
+<div class="space-y-3 font-mono text-xs">
+<!-- Field 1: Name -->
+<div class="grid grid-cols-1 sm:grid-cols-3 border-b border-[#E3DEC3] pb-2 items-baseline">
+<span class="text-[#736C60] uppercase text-[11px] tracking-wider">FULL NAME</span>
+<span class="sm:col-span-2 font-hand text-2xl text-[#181614] font-bold -mb-1">
+                      Jihan Aida Fakhira
+                    </span>
+</div>
+<!-- Field 2: Area of Expertise -->
+<div class="grid grid-cols-1 sm:grid-cols-3 border-b border-[#E3DEC3] pb-2 items-baseline">
+<span class="text-[#736C60] uppercase text-[11px] tracking-wider">AREA OF FOCUS</span>
+<span class="sm:col-span-2 font-hand text-xl text-[#1E293B] font-semibold leading-tight">
+                      Informatics Engineering, Creative Direction &amp; Video Editing
+                    </span>
+</div>
+<!-- Field 3: Degree & Campus -->
+<div class="grid grid-cols-1 sm:grid-cols-3 border-b border-[#E3DEC3] pb-2 items-baseline">
+<span class="text-[#736C60] uppercase text-[11px] tracking-wider">HIGHER DEGREE</span>
+<span class="sm:col-span-2 font-sans font-medium text-xs text-[#2A2723]">
+                      S1 Teknik Informatika — <strong class="text-[#1D4ED8]">Institut Teknologi PLN</strong> (2026–Present)
+                    </span>
+</div>
+<!-- Field 4: Location -->
+<div class="grid grid-cols-1 sm:grid-cols-3 border-b border-[#E3DEC3] pb-2 items-baseline">
+<span class="text-[#736C60] uppercase text-[11px] tracking-wider">BASED IN</span>
+<span class="sm:col-span-2 font-hand text-xl text-[#1E1C19]">
+                      Cilegon, Banten, Indonesia
+                    </span>
+</div>
+<!-- Field 5: Passion / Interests -->
+<div class="grid grid-cols-1 sm:grid-cols-3 border-b border-[#E3DEC3] pb-2 items-baseline">
+<span class="text-[#736C60] uppercase text-[11px] tracking-wider">CORE PASSION</span>
+<span class="sm:col-span-2 font-hand text-xl text-[#1E1C19]">
+                      Information Technology, AI Development &amp; Music
+                    </span>
+</div>
+<!-- Field 6: Leadership -->
+<div class="grid grid-cols-1 sm:grid-cols-3 border-b border-[#E3DEC3] pb-2 items-baseline">
+<span class="text-[#736C60] uppercase text-[11px] tracking-wider">KEY LEADERSHIP</span>
+<span class="sm:col-span-2 font-hand text-xl text-[#1E1C19]">
+                      Koordinator Sekbid Kesenian — OSIS (2024–2025)
+                    </span>
+</div>
+</div>
+<!-- Bottom Row: Stamp & Quick CTA -->
+<div class="mt-6 pt-3 flex flex-wrap items-center justify-between gap-4">
+<!-- Rubber Stamp Certification Box -->
+<div class="rubber-stamp px-3 py-1.5 rounded rotate-[-3deg] inline-flex items-center space-x-2">
+<span class="text-xs">★ VERIFIED ARCHIVE ★</span>
+<span class="text-[10px] font-sans font-bold bg-[#1D4ED8] text-white px-1.5 py-0.5 rounded">PASSED</span>
+</div>
+<!-- Direct Actions -->
+<div class="flex items-center space-x-3">
+<a class="inline-flex items-center text-xs font-mono font-bold uppercase tracking-wider bg-[#1F1E1C] text-white px-4 py-2.5 rounded hover:bg-[#1D4ED8] transition-colors shadow" href="#work">
+                      EXPLORE WORKS ↓
+                    </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Peeking Olive Stationery Card Beneath (as in Image) -->
+<div class="absolute -bottom-8 right-6 w-48 sm:w-60 h-28 bg-[#8C936D] rounded shadow-md -rotate-3 p-3 text-white hidden sm:block border border-[#767C59]">
+<div class="border border-white/40 h-full w-full p-2 flex flex-col justify-between">
+<span class="font-mono text-[9px] uppercase tracking-widest text-[#E3E8C8]">NOTE RECORD</span>
+<p class="font-hand text-xl leading-none text-[#F4F7E6]">Combining logic &amp; artistry</p>
+<span class="font-mono text-[8px] text-right text-[#D5DDC0]">JIHAN · 2026</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Hero Section -->
+<!-- BEGIN: Editorial Spread Section (About & Digiworld) -->
+<section class="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden" id="about">
+<!-- Faint Giant Calligraphy Signature Watermark in Desk Background -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden opacity-10">
+<span class="font-script text-[18vw] whitespace-nowrap text-[#574D3F]">
+          Jihan Aida Fakhira
+        </span>
+</div>
+<!-- Section Title Badge -->
+<div class="text-center mb-16 relative z-10">
+<div class="inline-block washi-tape px-6 py-1.5 mb-2 -rotate-1">
+<span class="font-mono text-xs uppercase tracking-[0.3em] font-bold text-[#574D3F]">VOLUME 02 // ARCHIVAL DOSSIER</span>
+</div>
+<h2 class="font-script text-5xl sm:text-6xl text-[#1E1C19]">Welcome to my Digiworld</h2>
+</div>
+<!-- The 3-Spread Scrapbook Layout (Deep Burgundy + Periwinkle Blue + Sage Trifold) -->
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- CARD 1 (Left 4 cols): Deep Burgundy "SPOTLIGHTED IN" with 3x3 Cards -->
+<div class="lg:col-span-4 bg-[#9E4763] rounded-xl shadow-folder p-5 sm:p-6 text-white transform -rotate-2 hover:rotate-0 transition-transform duration-300 tactile-lift">
+<div class="text-center pb-4 mb-4 border-b border-pink-200/30">
+<h3 class="font-mono text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#FCE7EF]">
+              MY WORLD SPOTLIGHTED IN
+            </h3>
+<p class="font-hand text-lg text-pink-100 mt-1">core areas &amp; identity points</p>
+</div>
+<!-- 3x3 Mini Index Grid matching the original image layout -->
+<div class="grid grid-cols-3 gap-2.5">
+<!-- Item 1 -->
+<div class="bg-[#F8F6F0] text-[#1E1C19] rounded p-2 text-center shadow-xs flex flex-col justify-center min-h-[90px] border border-[#DDD6C5]">
+<span class="font-mono text-[9px] text-[#8C465D] font-bold">01. CAMPUS</span>
+<span class="font-sans font-bold text-[11px] leading-tight mt-1 text-[#222]">IT-PLN Jakarta</span>
+<span class="font-hand text-xs text-neutral-500 mt-0.5">Teknik Informatika</span>
+</div>
+<!-- Item 2 -->
+<div class="bg-[#F8F6F0] text-[#1E1C19] rounded p-2 text-center shadow-xs flex flex-col justify-center min-h-[90px] border border-[#DDD6C5]">
+<span class="font-mono text-[9px] text-[#8C465D] font-bold">02. TECH</span>
+<span class="font-sans font-bold text-[11px] leading-tight mt-1 text-[#222]">AI &amp; IT</span>
+<span class="font-hand text-xs text-neutral-500 mt-0.5">Future Focus</span>
+</div>
+<!-- Item 3 -->
+<div class="bg-[#F8F6F0] text-[#1E1C19] rounded p-2 text-center shadow-xs flex flex-col justify-center min-h-[90px] border border-[#DDD6C5]">
+<span class="font-mono text-[9px] text-[#8C465D] font-bold">03. OSIS</span>
+<span class="font-sans font-bold text-[11px] leading-tight mt-1 text-[#222]">Sekbid Seni</span>
+<span class="font-hand text-xs text-neutral-500 mt-0.5">Koordinator</span>
+</div>
+<!-- Item 4 -->
+<div class="bg-[#F8F6F0] text-[#1E1C19] rounded p-2 text-center shadow-xs flex flex-col justify-center min-h-[90px] border border-[#DDD6C5]">
+<span class="font-mono text-[9px] text-[#8C465D] font-bold">04. MEDIA</span>
+<span class="font-sans font-bold text-[11px] leading-tight mt-1 text-[#222]">Editing</span>
+<span class="font-hand text-xs text-neutral-500 mt-0.5">Video &amp; Story</span>
+</div>
+<!-- Item 5 -->
+<div class="bg-[#F8F6F0] text-[#1E1C19] rounded p-2 text-center shadow-xs flex flex-col justify-center min-h-[90px] border border-[#DDD6C5]">
+<span class="font-mono text-[9px] text-[#8C465D] font-bold">05. HOMETOWN</span>
+<span class="font-sans font-bold text-[11px] leading-tight mt-1 text-[#222]">Cilegon</span>
+<span class="font-hand text-xs text-neutral-500 mt-0.5">Banten</span>
+</div>
+<!-- Item 6 -->
+<div class="bg-[#F8F6F0] text-[#1E1C19] rounded p-2 text-center shadow-xs flex flex-col justify-center min-h-[90px] border border-[#DDD6C5]">
+<span class="font-mono text-[9px] text-[#8C465D] font-bold">06. AUDIO</span>
+<span class="font-sans font-bold text-[11px] leading-tight mt-1 text-[#222]">Music</span>
+<span class="font-hand text-xs text-neutral-500 mt-0.5">Sonic Inspiration</span>
+</div>
+<!-- Item 7 -->
+<div class="bg-[#F8F6F0] text-[#1E1C19] rounded p-2 text-center shadow-xs flex flex-col justify-center min-h-[90px] border border-[#DDD6C5]">
+<span class="font-mono text-[9px] text-[#8C465D] font-bold">07. SOFT</span>
+<span class="font-sans font-bold text-[11px] leading-tight mt-1 text-[#222]">Teamwork</span>
+<span class="font-hand text-xs text-neutral-500 mt-0.5">Collaboration</span>
+</div>
+<!-- Item 8 -->
+<div class="bg-[#F8F6F0] text-[#1E1C19] rounded p-2 text-center shadow-xs flex flex-col justify-center min-h-[90px] border border-[#DDD6C5]">
+<span class="font-mono text-[9px] text-[#8C465D] font-bold">08. LOGIC</span>
+<span class="font-sans font-bold text-[11px] leading-tight mt-1 text-[#222]">Problem Solving</span>
+<span class="font-hand text-xs text-neutral-500 mt-0.5">Analytical</span>
+</div>
+<!-- Item 9 -->
+<div class="bg-[#F8F6F0] text-[#1E1C19] rounded p-2 text-center shadow-xs flex flex-col justify-center min-h-[90px] border border-[#DDD6C5]">
+<span class="font-mono text-[9px] text-[#8C465D] font-bold">09. TOOLS</span>
+<span class="font-sans font-bold text-[11px] leading-tight mt-1 text-[#222]">Office Suite</span>
+<span class="font-hand text-xs text-neutral-500 mt-0.5">Word/PPT/Excel</span>
+</div>
+</div>
+<!-- Bottom Footer note -->
+<div class="mt-4 pt-3 border-t border-pink-200/20 text-center font-mono text-[10px] text-pink-200">
+            JIHAN ARCHIVE ARCHITECTURE · VOL I
+          </div>
+</div>
+<!-- CARD 2 (Center 5 cols): Periwinkle Blue Letter with 2-Column Bio -->
+<div class="lg:col-span-5 bg-[#C7D9EE] rounded-xl shadow-folder p-6 sm:p-8 text-[#1E293B] border border-[#B0C7E0] transform hover:-translate-y-1 transition-transform duration-300 relative">
+<!-- Ornate Letterhead -->
+<div class="text-center pb-6 border-b border-[#ADC3DD]">
+<h3 class="font-script text-4xl sm:text-5xl text-[#1B2A4A] leading-tight">
+              Welcome to my Digiworld
+            </h3>
+<p class="font-mono text-[11px] tracking-[0.25em] text-[#3E5275] uppercase mt-1">
+              JIHAN · EST. 2026 · CILEGON
+            </p>
+</div>
+<!-- Editorial 2-Column Narrative -->
+<div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-[13px] leading-relaxed font-sans text-[#2C3B53]">
+<p>
+              Halo! Saya <strong>Jihan Aida Fakhira</strong>, mahasiswi S1 Teknik Informatika di <em>Institut Teknologi PLN</em>. Saya percaya bahwa dunia teknologi informasi bukan sekadar tentang baris kode dan algoritma biner, melainkan juga wadah ekspresi visual yang sangat dinamis.
+            </p>
+<p>
+              Dengan bekal pengalaman sebagai <strong>Koordinator Sekbid Kesenian di OSIS (2024–2025)</strong>, saya terbiasa memimpin kolaborasi artistik, mengarahkan produksi kreatif, serta memecahkan problem di lapangan secara tangkas dan solutif.
+            </p>
+</div>
+<div class="mt-4 pt-4 border-t border-[#ADC3DD] text-xs leading-relaxed text-[#2C3B53]">
+<p>
+              Fokus saya saat ini mencakup pendalaman <em>software engineering</em> dasar, eksplorasi AI tools modern, video editing berdaya tarik tinggi, hingga manajemen produktivitas digital.
+            </p>
+</div>
+<!-- CTA Badge: Download Resume / Dossier -->
+<div class="mt-8 text-center">
+<a class="inline-flex items-center space-x-2 border-2 border-[#1B2A4A] bg-[#EBF3FB] px-5 py-2.5 rounded shadow-sm hover:bg-[#1B2A4A] hover:text-white transition-colors duration-200 group" href="mailto:jihanfakhira53@gmail.com?subject=Inquiry%20from%20Portfolio%20-%20Jihan%20Aida">
+<span class="font-mono text-xs uppercase tracking-widest font-bold">GET IN TOUCH / DOSSIER</span>
+<span class="group-hover:translate-x-1 transition-transform">↗</span>
+</a>
+</div>
+</div>
+<!-- CARD 3 (Right 3 cols): Sage Green Tri-fold Brochure with Pink Tracing Paper Overlay -->
+<div class="lg:col-span-3 bg-[#9BA892] rounded-xl shadow-folder p-6 text-[#1F251C] transform rotate-3 hover:rotate-0 transition-transform duration-300 tactile-lift relative border border-[#8B9882]">
+<!-- Pink Tracing Paper Note pinned on top right -->
+<div class="absolute -top-5 -right-3 w-32 bg-[#FCECEE]/90 backdrop-blur-xs p-3 rounded shadow-md border border-[#F0D1D8] transform rotate-6">
+<span class="chrome-star text-lg float-right">✦</span>
+<p class="font-hand text-sm text-[#7D344B] leading-tight">always curious, forever crafting.</p>
+</div>
+<div class="pt-4">
+<h4 class="font-mono text-xs uppercase tracking-[0.2em] font-bold text-[#2A3426] border-b border-[#828E79] pb-2">
+              TECHNICAL FOCUS
+            </h4>
+<ul class="mt-3 space-y-1.5 font-sans text-xs text-[#20271E]">
+<li>• Informatika &amp; Web Logic</li>
+<li>• Generative AI &amp; Prompts</li>
+<li>• Digital Productivity Systems</li>
+<li>• Microsoft Office Ecosystem</li>
+</ul>
+<h4 class="font-mono text-xs uppercase tracking-[0.2em] font-bold text-[#2A3426] border-b border-[#828E79] pb-2 mt-8">
+              CREATIVE DIRECTION
+            </h4>
+<ul class="mt-3 space-y-1.5 font-sans text-xs text-[#20271E]">
+<li>• Video Editing &amp; Sequencing</li>
+<li>• Art &amp; Event Coordination</li>
+<li>• Visual Storytelling</li>
+<li>• Audio &amp; Music Curation</li>
+</ul>
+<div class="mt-8 pt-4 border-t border-[#828E79] text-center">
+<span class="font-script text-2xl text-[#1E251C]">Jihan A. Fakhira</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Editorial Spread Section -->
+<!-- BEGIN: Selected Work Section -->
+<section class="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" id="work">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b-2 border-[#D8D2C3] pb-4">
+<div>
+<span class="font-mono text-xs uppercase tracking-[0.25em] text-[#1D4ED8] font-bold block mb-1">
+            DOSSIER INDEX // 03
+          </span>
+<h2 class="font-mono text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-[#1E1C19]">
+            SELECTED WORK &amp; PROJECTS
+          </h2>
+</div>
+<p class="font-hand text-xl text-[#635C50] mt-2 md:mt-0">
+          Koleksi proyek kepemimpinan seni, editing video, dan eksplorasi teknologi
+        </p>
+</div>
+<!-- Scrapbook Grid of Archival Files -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- PROJECT 1: OSIS Art Leadership -->
+<article class="bg-[#FAF8F3] border border-[#DDD6C5] rounded-lg p-5 shadow-tactile relative tactile-lift group">
+<!-- Washi tape at top -->
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 washi-tape w-28 h-6 rotate-1"></div>
+<div class="aspect-[16/10] bg-[#2E3138] rounded overflow-hidden relative mt-2">
+<img alt="Program Kerja Pentas Seni OSIS" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsY89x3cJu1fKJxBPf_bImdZ9h9xDza-Ou-B7phmdBGpasK03D_WYGEOCDigu6WAuCaAu5-Tkhms8aCVi0XDorjJahf47eu9e76rtOd1xxq25cv2H5MkR8Rk-QPARRDQWtixggh7KhjNfdH5edTnAe9aoDHKZoApVWs7db1g15lzn1QAmWaz5hYI1x84JtYO92cPj8uwcjaUInJuBJnkZu12xF17ImdljMXVV9cRM">
+<span class="absolute top-2 left-2 bg-[#9E4763] text-white font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 rounded">
+              FILE 01 // ARTS
+            </span>
+</div>
+<div class="mt-4">
+<div class="flex items-center justify-between text-neutral-400 font-mono text-[10px]">
+<span>PERIODE 2024–2025</span>
+<span>ROLE: KOORDINATOR</span>
+</div>
+<h3 class="font-sans font-bold text-lg text-[#1E1C19] mt-1 group-hover:text-[#1D4ED8] transition-colors">
+              Pentas Seni &amp; Eksibisi Kreatif OSIS
+            </h3>
+<p class="font-sans text-xs text-[#524E46] mt-2 leading-relaxed">
+              Memimpin koordinasi Seksi Bidang Kesenian OSIS dalam merancang panggung pertunjukan, kurasi bakat siswa, visual dekorasi panggung, serta manajemen alur acara.
+            </p>
+<div class="mt-4 pt-3 border-t border-[#EAE4D5] flex flex-wrap gap-1.5 font-mono text-[10px]">
+<span class="bg-[#EDE8DC] text-[#4A463D] px-2 py-0.5 rounded">Event Concept</span>
+<span class="bg-[#EDE8DC] text-[#4A463D] px-2 py-0.5 rounded">Team Leadership</span>
+<span class="bg-[#EDE8DC] text-[#4A463D] px-2 py-0.5 rounded">Stage Craft</span>
+</div>
+</div>
+</article>
+<!-- PROJECT 2: Video Editing & Creative Media -->
+<article class="bg-[#FAF8F3] border border-[#DDD6C5] rounded-lg p-5 shadow-tactile relative tactile-lift group">
+<!-- Washi tape at top -->
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 washi-tape w-28 h-6 -rotate-2"></div>
+<div class="aspect-[16/10] bg-[#1E232B] rounded overflow-hidden relative mt-2">
+<img alt="Video Editing &amp; Creative Storytelling" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy08mbP5dkPNayeGtT8oBNXoqoLoWd6y3YLOhvRhq31vOqeWaPtRc69tjO_sVm3LxrOKS3ALHSt8exfuKTbKFZl8idLfHCZZS0qgPr28Cb8-U29ClPranoAC04lcjLh60AVUneVrtPZ-3RxPbNN3EiBzc_fSzsuexSa-ls8Cj9C9ceH44hiLj66W-WIbj_QOQwMoBKrog5Kif-XCnNwGzjobX4aCY_377C7ovmvZg">
+<span class="absolute top-2 left-2 bg-[#1D4ED8] text-white font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 rounded">
+              FILE 02 // CREATIVE
+            </span>
+</div>
+<div class="mt-4">
+<div class="flex items-center justify-between text-neutral-400 font-mono text-[10px]">
+<span>CREATIVE PRODUCTION</span>
+<span>AUDIO-VISUAL</span>
+</div>
+<h3 class="font-sans font-bold text-lg text-[#1E1C19] mt-1 group-hover:text-[#1D4ED8] transition-colors">
+              Visual Storytelling &amp; Video Editing Reel
+            </h3>
+<p class="font-sans text-xs text-[#524E46] mt-2 leading-relaxed">
+              Eksplorasi sequence dinamis, sinkronisasi audio-ritme musik, color timing, dan tata visual naratif untuk dokumentasi kegiatan organisasi dan konten visual digital.
+            </p>
+<div class="mt-4 pt-3 border-t border-[#EAE4D5] flex flex-wrap gap-1.5 font-mono text-[10px]">
+<span class="bg-[#EDE8DC] text-[#4A463D] px-2 py-0.5 rounded">Video Editing</span>
+<span class="bg-[#EDE8DC] text-[#4A463D] px-2 py-0.5 rounded">Pacing &amp; Audio</span>
+<span class="bg-[#EDE8DC] text-[#4A463D] px-2 py-0.5 rounded">CapCut / Premiere</span>
+</div>
+</div>
+</article>
+<!-- PROJECT 3: Tech & AI Exploration at IT-PLN -->
+<article class="bg-[#FAF8F3] border border-[#DDD6C5] rounded-lg p-5 shadow-tactile relative tactile-lift group">
+<!-- Washi tape at top -->
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 washi-tape w-28 h-6 rotate-2"></div>
+<div class="aspect-[16/10] bg-[#1E2E28] rounded overflow-hidden relative mt-2">
+<img alt="Teknik Informatika &amp; AI Exploration" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9O-2ZWTH2bQjDfM1zyw7FOEbK4teSf6GmvMzgqp9eQu5W8yHQvh3DUIpg51HdzC4yxzLzcb3GzbloyC7hwXrIfPz2b53Hz91DQuKn0gwuujDJYTqRll65-CpoJ84xt8SURJTGmuKhS5sISltgaqutozmls8n8NnvC-TaQuX4R_oQBYILQFooZtkscA_ZNj1O0pCrrbo9Q7LW6hgKGbaln-bx8hHAOq9ZWxNEdl6s">
+<span class="absolute top-2 left-2 bg-[#9BA892] text-[#1E251C] font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 rounded font-bold">
+              FILE 03 // TECH &amp; AI
+            </span>
+</div>
+<div class="mt-4">
+<div class="flex items-center justify-between text-neutral-400 font-mono text-[10px]">
+<span>IT-PLN ACADEMICS</span>
+<span>2026 — PRESENT</span>
+</div>
+<h3 class="font-sans font-bold text-lg text-[#1E1C19] mt-1 group-hover:text-[#1D4ED8] transition-colors">
+              Eksplorasi Algoritma Informatika &amp; AI Tools
+            </h3>
+<p class="font-sans text-xs text-[#524E46] mt-2 leading-relaxed">
+              Studi dasar pemrograman, struktur data, pengolahan dokumen komputasi, serta utilisasi prompt engineering untuk akselerasi alur kerja kreatif modern.
+            </p>
+<div class="mt-4 pt-3 border-t border-[#EAE4D5] flex flex-wrap gap-1.5 font-mono text-[10px]">
+<span class="bg-[#EDE8DC] text-[#4A463D] px-2 py-0.5 rounded">Teknik Informatika</span>
+<span class="bg-[#EDE8DC] text-[#4A463D] px-2 py-0.5 rounded">AI Exploration</span>
+<span class="bg-[#EDE8DC] text-[#4A463D] px-2 py-0.5 rounded">Problem Solving</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- END: Selected Work Section -->
+<!-- BEGIN: Skills & Chronicle Section -->
+<section class="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" id="skills">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+<!-- Left Column: Chronicle / Roots (Folder Pink Sheet) -->
+<div class="lg:col-span-5 bg-[#E6A6B8] rounded-xl shadow-folder p-6 sm:p-8 border border-[#D593A5] flex flex-col justify-between">
+<div>
+<div class="border-b border-[#CC8296] pb-3 mb-6">
+<span class="font-mono text-xs uppercase tracking-widest text-[#5E2B3A] font-bold">TIMELINE &amp; ROOTS</span>
+<h3 class="font-mono text-2xl font-bold uppercase tracking-tight text-[#2B141D] mt-1">
+                CHRONICLE
+              </h3>
+</div>
+<div class="space-y-6">
+<!-- Item 1 -->
+<div class="relative pl-6 border-l-2 border-[#8A3A52]">
+<div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-[#8A3A52]"></div>
+<span class="font-mono text-[10px] tracking-widest uppercase bg-[#FAF5EB] text-[#5E2B3A] px-2 py-0.5 rounded font-bold">2026 — PRESENT</span>
+<h4 class="font-sans font-bold text-base text-[#1E1C19] mt-1">S1 Teknik Informatika</h4>
+<p class="font-sans text-xs text-[#48202E] font-medium">Institut Teknologi PLN (IT-PLN)</p>
+<p class="font-hand text-sm text-[#48202E] mt-1">Fokus pada fondasi rekayasa perangkat lunak, sistem komputasi, dan adopsi kecerdasan buatan.</p>
+</div>
+<!-- Item 2 -->
+<div class="relative pl-6 border-l-2 border-[#8A3A52]">
+<div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-[#8A3A52]"></div>
+<span class="font-mono text-[10px] tracking-widest uppercase bg-[#FAF5EB] text-[#5E2B3A] px-2 py-0.5 rounded font-bold">2024 — 2025</span>
+<h4 class="font-sans font-bold text-base text-[#1E1C19] mt-1">Koordinator Sekbid Kesenian</h4>
+<p class="font-sans text-xs text-[#48202E] font-medium">Organisasi Siswa Intra Sekolah (OSIS)</p>
+<p class="font-hand text-sm text-[#48202E] mt-1">Mengorganisir festival kesenian, dekorasi tematik, harmonisasi antar divisi kreatif, dan komunikasi bakat siswa.</p>
+</div>
+<!-- Item 3 -->
+<div class="relative pl-6 border-l-2 border-[#8A3A52]">
+<div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-[#8A3A52]"></div>
+<span class="font-mono text-[10px] tracking-widest uppercase bg-[#FAF5EB] text-[#5E2B3A] px-2 py-0.5 rounded font-bold">HOMETOWN</span>
+<h4 class="font-sans font-bold text-base text-[#1E1C19] mt-1">Cilegon, Banten</h4>
+<p class="font-sans text-xs text-[#48202E] font-medium">Pusat Tumbuh &amp; Eksplorasi</p>
+<p class="font-hand text-sm text-[#48202E] mt-1">Basis inspirasi dan pembentukan karakter kepemimpinan yang tangguh.</p>
+</div>
+</div>
+</div>
+<!-- Bottom Signature Signoff -->
+<div class="mt-8 pt-4 border-t border-[#CC8296] flex items-center justify-between">
+<span class="font-mono text-[10px] uppercase tracking-wider text-[#5E2B3A]">ARCHIVE RECORD</span>
+<span class="font-script text-2xl text-[#2B141D]">Jihan A. Fakhira</span>
+</div>
+</div>
+<!-- Right Column: Skills & Toolkit (Loose Leaf Binder Card) -->
+<div class="lg:col-span-7 bg-[#FAF9F5] rounded-xl shadow-tactile p-6 sm:p-8 border border-[#E0DBC8] flex flex-col justify-between">
+<div>
+<div class="border-b border-[#E0DBC8] pb-3 mb-6 flex items-center justify-between">
+<div>
+<span class="font-mono text-xs uppercase tracking-widest text-[#1D4ED8] font-bold">INVENTORY RECORD</span>
+<h3 class="font-mono text-2xl font-bold uppercase tracking-tight text-[#1E1C19] mt-1">
+                  SKILLS &amp; TOOLKIT
+                </h3>
+</div>
+<span class="chrome-star text-3xl">✦</span>
+</div>
+<!-- Category 1: Daily Productivity Tools -->
+<div class="mb-6">
+<span class="font-mono text-xs uppercase font-bold text-neutral-500 tracking-wider block mb-2">
+                // DAILY PRODUCTIVITY &amp; ESSENTIALS
+              </span>
+<div class="grid grid-cols-3 gap-3">
+<div class="bg-white border border-[#DDD6C5] rounded p-3 text-center shadow-xs">
+<div class="text-blue-600 font-bold text-lg font-mono">Word</div>
+<span class="text-[11px] font-sans text-neutral-600">Document Drafting</span>
+</div>
+<div class="bg-white border border-[#DDD6C5] rounded p-3 text-center shadow-xs">
+<div class="text-emerald-600 font-bold text-lg font-mono">Excel</div>
+<span class="text-[11px] font-sans text-neutral-600">Data &amp; Sheets</span>
+</div>
+<div class="bg-white border border-[#DDD6C5] rounded p-3 text-center shadow-xs">
+<div class="text-orange-600 font-bold text-lg font-mono">PPT</div>
+<span class="text-[11px] font-sans text-neutral-600">Slide Deck Design</span>
+</div>
+</div>
+</div>
+<!-- Category 2: Creative & Technical Competencies -->
+<div class="mb-6">
+<span class="font-mono text-xs uppercase font-bold text-neutral-500 tracking-wider block mb-2">
+                // HARD SKILLS &amp; DOMAIN INTERESTS
+              </span>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+<div class="bg-[#F0F5FA] border border-[#C9DAEC] p-2.5 rounded text-center">
+<span class="font-sans font-bold text-xs text-[#1B2A4A] block">Video Editing</span>
+<span class="font-hand text-xs text-neutral-600">CapCut / Premiere</span>
+</div>
+<div class="bg-[#F0F5FA] border border-[#C9DAEC] p-2.5 rounded text-center">
+<span class="font-sans font-bold text-xs text-[#1B2A4A] block">Informatics</span>
+<span class="font-hand text-xs text-neutral-600">Logic &amp; Coding Basics</span>
+</div>
+<div class="bg-[#F0F5FA] border border-[#C9DAEC] p-2.5 rounded text-center">
+<span class="font-sans font-bold text-xs text-[#1B2A4A] block">AI Integration</span>
+<span class="font-hand text-xs text-neutral-600">Workflows &amp; Prompts</span>
+</div>
+<div class="bg-[#F0F5FA] border border-[#C9DAEC] p-2.5 rounded text-center">
+<span class="font-sans font-bold text-xs text-[#1B2A4A] block">Music &amp; Audio</span>
+<span class="font-hand text-xs text-neutral-600">Rhythm &amp; Mood</span>
+</div>
+</div>
+</div>
+<!-- Category 3: Soft Skills Rubber Stamps -->
+<div>
+<span class="font-mono text-xs uppercase font-bold text-neutral-500 tracking-wider block mb-2">
+                // CORE SOFT SKILLS (VERIFIED IN FIELD)
+              </span>
+<div class="flex flex-wrap gap-2.5 items-center">
+<span class="rubber-stamp px-3 py-1 text-xs -rotate-2 inline-block">★ PROBLEM SOLVING</span>
+<span class="rubber-stamp px-3 py-1 text-xs rotate-1 inline-block border-[#B91C1C] text-[#B91C1C]">★ TEAM WORK</span>
+<span class="rubber-stamp px-3 py-1 text-xs -rotate-1 inline-block border-[#047857] text-[#047857]">★ LEADERSHIP</span>
+<span class="rubber-stamp px-3 py-1 text-xs rotate-2 inline-block border-[#6B21A8] text-[#6B21A8]">★ ADAPTABILITY</span>
+</div>
+</div>
+</div>
+<!-- Note -->
+<div class="mt-6 pt-4 border-t border-[#E0DBC8] flex items-center justify-between text-neutral-500 font-mono text-[11px]">
+<span>STATIONERY SPECIFICATION // NO. 26</span>
+<span class="font-hand text-base text-neutral-700">crafted with precision</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Skills & Chronicle Section -->
+<!-- BEGIN: Contact & Archival Postcard Footer -->
+<section class="relative py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto" id="contact">
+<!-- Vintage Blue Archival Envelope Card -->
+<div class="bg-[#D3E2F2] rounded-2xl shadow-folder border-2 border-[#BDD3E8] p-6 sm:p-10 md:p-14 relative overflow-hidden tactile-lift">
+<!-- Postmark Stamp in Top Right -->
+<div class="absolute top-6 right-6 w-24 h-24 border-2 border-[#1D4ED8] rounded-full flex flex-col items-center justify-center p-2 text-center text-[#1D4ED8] -rotate-12 select-none opacity-80 pointer-events-none">
+<span class="font-mono text-[8px] uppercase tracking-widest font-bold">OFFICIAL POST</span>
+<span class="font-mono text-[9px] font-bold">CILEGON · ID</span>
+<span class="font-mono text-[8px]">★ 2026 ★</span>
+</div>
+<div class="max-w-2xl">
+<div class="inline-block washi-tape px-4 py-1 mb-3">
+<span class="font-mono text-xs uppercase tracking-widest font-bold text-[#204060]">INQUIRIES &amp; COLLABORATIONS</span>
+</div>
+<h2 class="font-script text-5xl sm:text-6xl text-[#1B2A4A] leading-tight">
+            Let's Create &amp; Connect
+          </h2>
+<p class="font-sans text-sm sm:text-base text-[#2E476B] mt-2 leading-relaxed">
+            Terbuka untuk kolaborasi proyek teknologi informasi, kreasi video, kepanitiaan kreatif, maupun kesempatan magang dan networking profesional. Silakan hubungi langsung melalui kanal di bawah ini:
+          </p>
+<!-- Contact Channels List -->
+<div class="mt-8 space-y-4 font-mono text-sm">
+<!-- Email (with Interactive Copy) -->
+<div class="bg-white/80 backdrop-blur-xs p-3.5 rounded-lg border border-[#BACEE2] flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+<div class="flex items-center space-x-3">
+<span class="text-xl">✉️</span>
+<div>
+<span class="text-[10px] text-neutral-500 uppercase tracking-widest block font-bold">PRIMARY EMAIL</span>
+<a class="font-bold text-[#1B2A4A] hover:text-[#1D4ED8] transition-colors break-all" href="mailto:jihanfakhira53@gmail.com">
+                    jihanfakhira53@gmail.com
+                  </a>
+</div>
+</div>
+<button class="px-4 py-1.5 rounded bg-[#1B2A4A] text-white hover:bg-[#1D4ED8] transition-colors text-xs font-bold uppercase tracking-wider shrink-0 flex items-center justify-center space-x-1" data-purpose="copy-email-action" id="copyEmailBtn">
+<span>COPY EMAIL</span>
+</button>
+</div>
+<!-- WhatsApp Direct Contact -->
+<div class="bg-white/80 backdrop-blur-xs p-3.5 rounded-lg border border-[#BACEE2] flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+<div class="flex items-center space-x-3">
+<span class="text-xl">💬</span>
+<div>
+<span class="text-[10px] text-neutral-500 uppercase tracking-widest block font-bold">WHATSAPP DIRECT</span>
+<a class="font-bold text-[#1B2A4A] hover:text-[#1D4ED8] transition-colors" href="https://wa.me/6282223031762" rel="noopener noreferrer" target="_blank">
+                    +62 822-2303-1762
+                  </a>
+</div>
+</div>
+<a class="px-4 py-1.5 rounded border border-[#1B2A4A] text-[#1B2A4A] hover:bg-[#1B2A4A] hover:text-white transition-colors text-xs font-bold uppercase tracking-wider text-center shrink-0" href="https://wa.me/6282223031762" rel="noopener noreferrer" target="_blank">
+                CHAT VIA WA ↗
+              </a>
+</div>
+<!-- Secondary Links: Campus & Dossier Location -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+<div class="p-3 bg-white/50 rounded border border-[#BACEE2]">
+<span class="text-[10px] text-neutral-500 uppercase font-bold block">ACADEMIC INSTITUTION</span>
+<span class="text-xs font-sans font-bold text-[#1B2A4A]">Institut Teknologi PLN (Jakarta)</span>
+</div>
+<div class="p-3 bg-white/50 rounded border border-[#BACEE2]">
+<span class="text-[10px] text-neutral-500 uppercase font-bold block">ORIGIN &amp; RESIDENCE</span>
+<span class="text-xs font-sans font-bold text-[#1B2A4A]">Cilegon, Banten, Indonesia</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Watermark & Copyright -->
+<footer class="mt-16 text-center text-neutral-500 font-mono text-xs">
+<p class="font-script text-3xl text-neutral-700 mb-2">Jihan Aida Fakhira</p>
+<p>© 2026 Jihan Aida Fakhira. Personal Editorial Scrapbook &amp; Archival Dossier.</p>
+<p class="text-[10px] text-neutral-400 mt-1 uppercase tracking-widest">Designed with tactile physical stationery aesthetics</p>
+</footer>
+</section>
+<!-- END: Contact Section -->
+</main>
+<!-- END: Main Container -->
+<!-- BEGIN: Interactive Toast Notification for Copy -->
+<div class="fixed bottom-6 right-6 z-50 bg-[#1F1E1C] text-white px-5 py-3 rounded-lg shadow-2xl font-mono text-xs transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center space-x-2 border border-neutral-700" id="toastNotification">
+<span class="text-emerald-400 text-base">✓</span>
+<span id="toastMessage">Email copied to clipboard!</span>
+</div>
+<!-- END: Interactive Toast Notification -->
+<!-- BEGIN: Interaction JavaScript -->
+<script data-purpose="clipboard-and-toast">
+    document.addEventListener('DOMContentLoaded', () => {
+      const copyBtn = document.getElementById('copyEmailBtn');
+      const toast = document.getElementById('toastNotification');
+      const toastMsg = document.getElementById('toastMessage');
+      const emailAddress = 'jihanfakhira53@gmail.com';
+
+      if (copyBtn && toast) {
+        copyBtn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(emailAddress);
+            toastMsg.textContent = 'Alamat email berhasil disalin!';
+            showToast();
+          } catch (err) {
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = emailAddress;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            toastMsg.textContent = 'Alamat email berhasil disalin!';
+            showToast();
+          }
+        });
+      }
+
+      function showToast() {
+        toast.classList.remove('translate-y-24', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+        setTimeout(() => {
+          toast.classList.remove('translate-y-0', 'opacity-100');
+          toast.classList.add('translate-y-24', 'opacity-0');
+        }, 2800);
+      }
+    });
+  </script>
+<!-- END: Interaction JavaScript -->
+
+
+</body></html>

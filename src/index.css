@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream-desk: #EFECE1;
+  --color-folder-pink: #E6A6B8;
+  --color-folder-pink-dark: #CE8B9D;
+  --color-paper-form: #F8F6F0;
+  --color-paper-blue: #C7D9EE;
+  --color-paper-sage: #9BA892;
+  --color-paper-burgundy: #9E4763;
+  --color-ink-navy: #1B2A4A;
+  --color-stamp-blue: #1D4ED8;
+  --color-stamp-red: #B91C1C;
+  --color-charcoal: #1F1E1C;
+  --color-pencil: #4B4944;
+  --color-parchment-border: #D8D2C3;
+
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-script: "Alex Brush", "Pinyon Script", cursive;
+  --font-pinyon: "Pinyon Script", cursive;
+  --font-hand: "Caveat", cursive;
+  --font-mono: "Space Mono", monospace;
+
+  --shadow-tactile: 0 20px 40px -15px rgba(50, 40, 30, 0.18), 0 3px 8px -2px rgba(50, 40, 30, 0.08);
+  --shadow-paper: 0 12px 28px -8px rgba(60, 50, 40, 0.15), 0 2px 6px rgba(0, 0, 0, 0.04);
+  --shadow-folder: 0 24px 50px -12px rgba(45, 30, 35, 0.22);
+  --shadow-polaroid: 0 16px 32px -6px rgba(20, 20, 20, 0.25), 0 4px 8px -2px rgba(0, 0, 0, 0.12);
+  --shadow-metal: inset 0 1px 2px rgba(255, 255, 255, 0.8), 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Tactile desk surface texture */
+body {
+  background-color: #EFECE1;
+  background-image:
+    radial-gradient(rgba(180, 170, 150, 0.25) 1px, transparent 1px),
+    radial-gradient(rgba(140, 130, 110, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px, 48px 48px;
+  background-position: 0 0, 12px 12px;
+  color: #2D2A26;
+}
+
+/* Manila Folder die-cut tab shape */
+.folder-tab {
+  clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
+}
+
+/* Binder punch holes */
+.binder-hole {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #EFECE1;
+  box-shadow: inset 1px 2px 4px rgba(40, 30, 20, 0.35), 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* Silver paperclip */
+.silver-paperclip {
+  position: absolute;
+  width: 16px;
+  height: 48px;
+  border: 3px solid #C0C0C4;
+  border-radius: 12px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.22), inset 1px 1px 2px rgba(255, 255, 255, 0.8);
+  z-index: 40;
+  pointer-events: none;
+}
+.silver-paperclip::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 1px;
+  width: 8px;
+  height: 30px;
+  border: 2px solid #A8A8AC;
+  border-radius: 8px;
+}
+
+/* 3D Chrome Star Sticker */
+.chrome-star {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #FFFFFF 0%, #D4D4D8 40%, #71717A 80%, #E4E4E7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.28));
+  transform-origin: center;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.chrome-star:hover {
+  transform: scale(1.2) rotate(12deg);
+}
+
+/* Rubber Stamp aesthetic */
+.rubber-stamp {
+  border: 2px dashed #1D4ED8;
+  color: #1D4ED8;
+  text-transform: uppercase;
+  font-family: "Space Mono", monospace;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+  letter-spacing: 0.1em;
+}
+
+/* Silver Tray Vintage Frame */
+.silver-tray {
+  background: linear-gradient(145deg, #F3F3F5, #D2D2D7, #A3A3AC, #EAEAEF);
+  border: 4px solid #B8B8C2;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.9), inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+.silver-tray::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px dashed rgba(255, 255, 255, 0.65);
+  pointer-events: none;
+}
+
+/* Washi Tape Strip */
+.washi-tape {
+  background: rgba(243, 235, 215, 0.78);
+  border-left: 2px dashed rgba(180, 160, 140, 0.5);
+  border-right: 2px dashed rgba(180, 160, 140, 0.5);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(2px);
+}
+
+/* Tactile lift hover physics */
+.tactile-lift {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease;
+}
+.tactile-lift:hover {
+  transform: translateY(-6px) scale(1.012);
+  box-shadow: 0 24px 42px -12px rgba(45, 30, 25, 0.22);
+}
+
+/* Ruled notebook lines */
+.ruled-lines {
+  background-image: repeating-linear-gradient(transparent, transparent 27px, #E5DFC8 28px);
+  line-height: 28px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tactile-lift,
+  .chrome-star {
+    transition: none !important;
+  }
+  .tactile-lift:hover {
+    transform: none !important;
+  }
+}
